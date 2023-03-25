@@ -4270,3 +4270,4 @@ venv/Lib/site-packages/tomli-2.0.1.dist-info/RECORD
 venv/Lib/site-packages/tomli-2.0.1.dist-info/WHEEL
 venv/Scripts/autopep8.exe
 venv/Scripts/pycodestyle.exe
+.vscode/settings.json

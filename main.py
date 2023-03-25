@@ -1,8 +1,14 @@
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.core.window import Window
 from kivy.uix.widget import Widget
 from kivy.properties import ObjectProperty
+
+Window.minimum_height = 500
+Window.minimum_width = 300
+Window.custom_titlebar = True
+# Window.borderless = True
 
 
 class Arithmetic(Screen):
