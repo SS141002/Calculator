@@ -6,8 +6,10 @@ from kivy.uix.widget import Widget
 from kivy.uix.floatlayout import FloatLayout
 from kivy.properties import ObjectProperty
 
-Window.minimum_height = 500
-Window.minimum_width = 300
+
+# Window.minimum_height = 500
+# Window.minimum_width = 300
+Window.size = (650, 500)
 Window.custom_titlebar = True
 Window.borderless = True
 
@@ -36,14 +38,17 @@ class Calc:
 class Arithmetic(Screen):
     pass
 
+
 class Screen_Manager(ScreenManager):
     pass
+
 
 class Background(FloatLayout):
     pass
 
 
 file = Builder.load_file("design.kv")
+
 
 class MyApp(App):
     def build(self):

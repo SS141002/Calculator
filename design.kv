@@ -1,25 +1,35 @@
 <Background>:
     canvas.before:
         Color:
-            rgb: .6, .6, .6
+            rgb: 0.6, 0.6, 0.6
         Rectangle:
             pos: self.pos
             size: self.size
 
     ActionBar:
+        id: titlebar
         pos_hint: {"top":1}
         size_hint: [1, 0.06]
         background_image: ""
         background_color: [0,1,0,1]
 
     ActionBar:
+        id: menubar
         pos_hint: {"top":0.94}
         size_hint: [1, 0.06]
         background_image: ""
         background_color: [1,0,0,1]
 
-    <Screen_Manager>:
+    Screen_Manager:
+        id: scrmgr
         Arithmetic:
+
+
+<Arithmetic>:
+    name: 'welcome'
+    Label:
+        text: 'Welcome Screen'
+        font_size: sp(50)
 
 
             
