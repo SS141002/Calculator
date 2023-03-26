@@ -3,14 +3,15 @@ from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
 from kivy.uix.widget import Widget
+from kivy.uix.floatlayout import FloatLayout
 from kivy.properties import ObjectProperty
 
 Window.minimum_height = 500
 Window.minimum_width = 300
 Window.custom_titlebar = True
-# Window.borderless = True
+Window.borderless = True
 
-
+'''
 class Calc:
     def __init__(self):
         self.text = ""
@@ -29,22 +30,26 @@ class Calc:
                 self.insert_into_infix(self.infix_element, num, '#', '#')
                 num = 0
 
+'''
+
 
 class Arithmetic(Screen):
+    pass
+
+class Screen_Manager(ScreenManager):
+    pass
+
+class Background(FloatLayout):
     pass
 
 
 file = Builder.load_file("design.kv")
 
-scrmgr = ScreenManager()
-scrmgr.add_widget(Arithmetic(name="scr_ari"))
-
-
 class MyApp(App):
     def build(self):
         # self.title = "Calculator"
         # self.icon = "ss.ico"
-        return scrmgr
+        return Background()
 
 
 if __name__ == "__main__":
