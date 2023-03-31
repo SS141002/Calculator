@@ -4271,3 +4271,9 @@ venv/Lib/site-packages/tomli-2.0.1.dist-info/WHEEL
 venv/Scripts/autopep8.exe
 venv/Scripts/pycodestyle.exe
 .vscode/settings.json
+venv/Lib/site-packages/pythonwin/start_pythonwin.pyw
+venv/Lib/site-packages/pywin32-306.dist-info/INSTALLER
+venv/Lib/site-packages/pywin32-306.dist-info/METADATA
+venv/Lib/site-packages/pywin32-306.dist-info/RECORD
+venv/Lib/site-packages/pywin32-306.dist-info/top_level.txt
+venv/Lib/site-packages/pywin32-306.dist-info/WHEEL
