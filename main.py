@@ -35,7 +35,7 @@ class Calc:
 '''
 
 
-class Arithmetic(Screen):
+class Standard(Screen):
     pass
 
 
