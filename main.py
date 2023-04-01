@@ -53,7 +53,7 @@ file = Builder.load_file("design.kv")
 class MyApp(App):
     def build(self):
         self.title = "Calculator"
-        # self.icon = "ss.ico"
+        self.icon = "Icons\calculator.png"
         return Background()
 
 
