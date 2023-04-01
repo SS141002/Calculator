@@ -7,9 +7,9 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.properties import ObjectProperty
 
 
-Window.minimum_width = 650
+Window.minimum_width = 550
 Window.minimum_height = 500
-Window.size = (650, 500)
+Window.size = (550, 500)
 # Window.custom_titlebar = True
 # Window.borderless = True
 
