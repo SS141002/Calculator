@@ -7,11 +7,11 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.properties import ObjectProperty
 
 
-# Window.minimum_height = 500
-# Window.minimum_width = 300
-Window.size = (650, 500)
-Window.custom_titlebar = True
-Window.borderless = True
+Window.minimum_width = 550
+Window.minimum_height = 500
+Window.size = (550, 500)
+# Window.custom_titlebar = True
+# Window.borderless = True
 
 '''
 class Calc:
@@ -35,7 +35,7 @@ class Calc:
 '''
 
 
-class Arithmetic(Screen):
+class Standard(Screen):
     pass
 
 
@@ -52,8 +52,8 @@ file = Builder.load_file("design.kv")
 
 class MyApp(App):
     def build(self):
-        # self.title = "Calculator"
-        # self.icon = "ss.ico"
+        self.title = "Calculator"
+        # self.icon = "Icons\calculator.png"
         return Background()
 
 
