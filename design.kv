@@ -8,15 +8,27 @@
 
     ActionBar:
         id: menubar
-        pos_hint: {"x":0}
-        size_hint: [0.1, 1]
+        pos_hint: {"y":0.9}
+        size_hint: [1, 0.1]
         background_image: ""
         border:[0, 0, 0, 0]
         background_color: [0.7, 0.7, 0.7, 1]
 
+        ActionView:
+            ActionPrevious:
+                markup: True
+                with_previous: False
+                title: "[b]Standard[/b]"
+                app_icon: ""
+            
+            ActionButton:
+                text: ""
+                icon: "icons\calculator.png"
+
     Screen_Manager:
         id: scrmgr
         Standard:
+        Unit_Converter:
 
 #####################################################################
 
@@ -27,6 +39,13 @@
     markup: True
     border:[20, 20, 20, 20]
     font_size: 25
+    # canvas.before:
+    #     Color:
+    #         rgba: (1,1,0,1)
+    #     RoundedRectangle:
+    #         size: self.size
+    #         pos: self.pos
+    #         radius: [50]
 
 <Ari_Func_Btn@Button>:
     background_color: [0.4, 0.4, 0.4, 1]
@@ -40,16 +59,10 @@
     name: "scr_std"
 
     FloatLayout:
-        Label:
-            text: "Standard"
-            halign: "center"
-            font_size: 30
-            size_hint: [0.85, 0.1]
-            pos_hint: {"x": 0.125, "y": 0.9}
-            
         TextInput:
-            size_hint: [0.85, 0.25]
-            pos_hint: {"x": 0.125, "y": 0.65}
+            size_hint: [0.95, 0.25]
+            pos_hint: {"x": 0.025, "y": 0.60}
+            readonly: True
 
         Ari_Num_Btn:
             text:"[b]7[/b]"
@@ -100,36 +113,42 @@
             pos_hint: {"x": 0.395, "y": 0.010}
 
         Ari_Func_Btn:
-            text:"[b]x[/b]"
+            text:"[b]/[/b]"
             pos_hint: {"x": 0.530, "y": 0.415}  
         
         Ari_Func_Btn:
-            text:"[b]+[/b]"
+            text:"[b]*[/b]"
             pos_hint: {"x": 0.530, "y": 0.280}  
 
         Ari_Func_Btn:
-            text:"[b]-[/b]"
+            text:"[b]+[/b]"
             pos_hint: {"x": 0.530, "y": 0.145}  
 
         Ari_Func_Btn:
-            text:"[b]=[/b]"
+            text:"[b]-[/b]"
             pos_hint: {"x": 0.530, "y": 0.010}
 
         Ari_Func_Btn:
-            text:"[b]=[/b]"
-            pos_hint: {"x": 0.530, "y": 0.415}
+            text:"[b]bk[/b]"
+            pos_hint: {"x": 0.665, "y": 0.415}
+
+        Ari_Func_Btn:
+            text:"[b]C[/b]"
+            pos_hint: {"x": 0.665, "y": 0.280}
+
+        Ari_Func_Btn:
+            text:"[b]%[/b]"
+            pos_hint: {"x": 0.665, "y": 0.145}
 
         Ari_Func_Btn:
             text:"[b]=[/b]"
-            pos_hint: {"x": 0.530, "y": 0.280}
+            pos_hint: {"x": 0.665, "y": 0.010}  
 
-        Ari_Func_Btn:
-            text:"[b]=[/b]"
-            pos_hint: {"x": 0.530, "y": 0.145}
+<Unit_Converter>:
+    name: "scr_uni"
 
-        Ari_Func_Btn:
-            text:"[b]=[/b]"
-            pos_hint: {"x": 0.530, "y": 0.010}  
+    FloatLayout:
+
 
 
 
