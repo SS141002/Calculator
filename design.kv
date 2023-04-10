@@ -27,18 +27,18 @@
 
     Screen_Manager:
         id: scrmgr
-        Standard:
+        # Standard:
         Unit_Converter:
 
 #####################################################################
 
 <Ari_Num_Btn@Button>:
+    markup: True
+    font_size: 25
+    size_hint: [0.125, 0.125]
     background_color: [0.5, 0.5, 0.5, 1]
     background_normal : ""
-    size_hint: [0.125, 0.125]
-    markup: True
     border:[20, 20, 20, 20]
-    font_size: 25
     # canvas.before:
     #     Color:
     #         rgba: (1,1,0,1)
@@ -48,12 +48,13 @@
     #         radius: [50]
 
 <Ari_Func_Btn@Button>:
+    markup: True
+    font_size: 25
+    size_hint: [0.125, 0.125]
     background_color: [0.4, 0.4, 0.4, 1]
     background_normal : ""
-    size_hint: [0.125, 0.125]
-    markup: True
     border:[20, 20, 20, 20]
-    font_size: 25
+    
 
 <Standard>:
     name: "scr_std"
@@ -144,10 +145,29 @@
             text:"[b]=[/b]"
             pos_hint: {"x": 0.665, "y": 0.010}  
 
+#####################################################################
+
+<D_D_Button@Button>:
+    markup: True
+    font_size: 20
+    size_hint_x: 0.2
+    # height: 100
+    background_color: [0.5, 0.5, 0.5, 1]
+    background_normal : ""
+    border:[20, 20, 20, 20]
+
+
 <Unit_Converter>:
     name: "scr_uni"
 
     FloatLayout:
+        DropDown:
+            pos_hint: {"center_x": 0.5, "center_y": 0.6}
+
+            D_D_Button:
+                text: "Hello"
+
+            
 
 
 
