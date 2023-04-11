@@ -1,10 +1,11 @@
-from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
 from kivy.uix.widget import Widget
 from kivy.uix.floatlayout import FloatLayout
 from kivy.properties import ObjectProperty
+
+from kivymd.app import MDApp
 
 
 Window.minimum_width = 550
@@ -54,8 +55,10 @@ class Background(FloatLayout):
 file = Builder.load_file("design.kv")
 
 
-class MyApp(App):
+class MyApp(MDApp):
     def build(self):
+        self.theme_cls.theme_style = "Dark"
+        self.theme_cls.primary_palette = "Orange"
         self.title = "Calculator"
         # self.icon = "Icons\calculator.png"
         return Background()

@@ -1,59 +1,17 @@
 <Background>:
-    canvas.before:
-        Color:
-            rgb: 0, 0, 0
-        Rectangle:
-            pos: self.pos
-            size: self.size
-
-    ActionBar:
-        id: menubar
-        pos_hint: {"y":0.9}
-        size_hint: [1, 0.1]
-        background_image: ""
-        border:[0, 0, 0, 0]
-        background_color: [0.7, 0.7, 0.7, 1]
-
-        ActionView:
-            ActionPrevious:
-                markup: True
-                with_previous: False
-                title: "[b]Standard[/b]"
-                app_icon: ""
-            
-            ActionButton:
-                text: ""
-                icon: "icons\calculator.png"
-
     Screen_Manager:
         id: scrmgr
-        # Standard:
+        Standard:
         Unit_Converter:
 
 #####################################################################
 
-<Ari_Num_Btn@Button>:
-    markup: True
-    font_size: 25
-    size_hint: [0.125, 0.125]
-    background_color: [0.5, 0.5, 0.5, 1]
-    background_normal : ""
-    border:[20, 20, 20, 20]
-    # canvas.before:
-    #     Color:
-    #         rgba: (1,1,0,1)
-    #     RoundedRectangle:
-    #         size: self.size
-    #         pos: self.pos
-    #         radius: [50]
+#Can also use "MDRoundFlatButton"
+<Ari_Num_Btn@MDRectangleFlatButton>:
+    font_size: 30
 
-<Ari_Func_Btn@Button>:
-    markup: True
-    font_size: 25
-    size_hint: [0.125, 0.125]
-    background_color: [0.4, 0.4, 0.4, 1]
-    background_normal : ""
-    border:[20, 20, 20, 20]
+<Ari_Func_Btn@MDRaisedButton>:
+    font_size: 30
     
 
 <Standard>:
@@ -67,105 +25,88 @@
 
         Ari_Num_Btn:
             text:"[b]7[/b]"
-            pos_hint: {"x": 0.125, "y": 0.415}
+            pos_hint: {"center_x": 0.125, "center_y": 0.475}
         
         Ari_Num_Btn:
             text:"[b]8[/b]"
-            pos_hint: {"x": 0.260, "y": 0.415}
+            pos_hint: {"center_x": 0.260, "center_y": 0.475}
 
         Ari_Num_Btn:
             text:"[b]9[/b]"
-            pos_hint: {"x": 0.395, "y": 0.415}
+            pos_hint: {"center_x": 0.395, "center_y": 0.475}
 
         Ari_Num_Btn:
             text:"[b]4[/b]"
-            pos_hint: {"x": 0.125, "y": 0.280}
+            pos_hint: {"center_x": 0.125, "center_y": 0.340}
 
         Ari_Num_Btn:
             text:"[b]5[/b]"
-            pos_hint: {"x": 0.260, "y": 0.280}
+            pos_hint: {"center_x": 0.260, "center_y": 0.340}
 
         Ari_Num_Btn:
             text:"[b]6[/b]"
-            pos_hint: {"x": 0.395, "y": 0.280}
+            pos_hint: {"center_x": 0.395, "center_y": 0.340}
 
         Ari_Num_Btn:
             text:"[b]1[/b]"
-            pos_hint: {"x": 0.125, "y": 0.145}
+            pos_hint: {"center_x": 0.125, "center_y": 0.205}
 
         Ari_Num_Btn:
             text:"[b]2[/b]"
-            pos_hint: {"x": 0.260, "y": 0.145}
+            pos_hint: {"center_x": 0.260, "center_y": 0.205}
 
         Ari_Num_Btn:
             text:"[b]3[/b]"
-            pos_hint: {"x": 0.395, "y": 0.145}
+            pos_hint: {"center_x": 0.395, "center_y": 0.205}
 
         Ari_Num_Btn:
             text:"[b][sup]+[/sup]/[sub]-[/sub][/b]"
-            pos_hint: {"x": 0.125, "y": 0.010}
+            pos_hint: {"center_x": 0.125, "center_y": 0.070}
 
         Ari_Num_Btn:
             text:"[b]0[/b]"
-            pos_hint: {"x": 0.260, "y": 0.010}
+            pos_hint: {"center_x": 0.260, "center_y": 0.070}
 
         Ari_Num_Btn:
             text:"[b].[/b]"
-            pos_hint: {"x": 0.395, "y": 0.010}
+            pos_hint: {"center_x": 0.395, "center_y": 0.070}
 
         Ari_Func_Btn:
             text:"[b]/[/b]"
-            pos_hint: {"x": 0.530, "y": 0.415}  
+            pos_hint: {"center_x": 0.530, "center_y": 0.475}  
         
         Ari_Func_Btn:
             text:"[b]*[/b]"
-            pos_hint: {"x": 0.530, "y": 0.280}  
+            pos_hint: {"center_x": 0.530, "center_y": 0.340}  
 
         Ari_Func_Btn:
             text:"[b]+[/b]"
-            pos_hint: {"x": 0.530, "y": 0.145}  
+            pos_hint: {"center_x": 0.530, "center_y": 0.205}  
 
         Ari_Func_Btn:
             text:"[b]-[/b]"
-            pos_hint: {"x": 0.530, "y": 0.010}
+            pos_hint: {"center_x": 0.530, "center_y": 0.070}
 
         Ari_Func_Btn:
             text:"[b]bk[/b]"
-            pos_hint: {"x": 0.665, "y": 0.415}
+            pos_hint: {"center_x": 0.665, "center_y": 0.475}
 
         Ari_Func_Btn:
             text:"[b]C[/b]"
-            pos_hint: {"x": 0.665, "y": 0.280}
+            pos_hint: {"center_x": 0.665, "center_y": 0.340}
 
         Ari_Func_Btn:
             text:"[b]%[/b]"
-            pos_hint: {"x": 0.665, "y": 0.145}
+            pos_hint: {"center_x": 0.665, "center_y": 0.205}
 
         Ari_Func_Btn:
             text:"[b]=[/b]"
-            pos_hint: {"x": 0.665, "y": 0.010}  
+            pos_hint: {"center_x": 0.665, "center_y": 0.070}  
 
 #####################################################################
 
-<D_D_Button@Button>:
-    markup: True
-    font_size: 20
-    size_hint_x: 0.2
-    # height: 100
-    background_color: [0.5, 0.5, 0.5, 1]
-    background_normal : ""
-    border:[20, 20, 20, 20]
-
-
 <Unit_Converter>:
     name: "scr_uni"
-
-    FloatLayout:
-        DropDown:
-            pos_hint: {"center_x": 0.5, "center_y": 0.6}
-
-            D_D_Button:
-                text: "Hello"
 
             
 
