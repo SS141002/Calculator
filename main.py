@@ -1,12 +1,11 @@
+from kivymd.app import MDApp
+from kivymd.uix.screenmanager import MDScreenManager
+from kivymd.uix.screen import MDScreen
+
 from kivy.lang import Builder
-from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
 from kivy.uix.widget import Widget
-from kivy.uix.floatlayout import FloatLayout
 from kivy.properties import ObjectProperty
-
-from kivymd.app import MDApp
-
 
 Window.minimum_width = 550
 Window.minimum_height = 500
@@ -36,19 +35,23 @@ class Calc:
 '''
 
 
-class Standard(Screen):
+class Standard(MDScreen):
     pass
 
 
-class Unit_Converter(Screen):
+class Scientific(MDScreen):
     pass
 
 
-class Screen_Manager(ScreenManager):
+class Unit_Converter(MDScreen):
     pass
 
 
-class Background(FloatLayout):
+class Screen_Manager(MDScreenManager):
+    pass
+
+
+class Background(MDScreen):
     pass
 
 

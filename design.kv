@@ -1,8 +1,31 @@
 <Background>:
-    Screen_Manager:
-        id: scrmgr
-        Standard:
-        Unit_Converter:
+    MDNavigationLayout:
+        Screen_Manager:
+            MDScreen:
+                MDNavigationRail:
+                    MDNavigationRailItem:
+                        text: "Standard"
+                        icon: "calculator-variant"
+                        on_press: 
+                            scrmgr.current = "scr_std"
+
+                    MDNavigationRailItem:
+                        text: "Scientific"
+                        icon: "language-javascript"
+                        on_press: 
+                            scrmgr.current = "scr_sci"
+
+                    MDNavigationRailItem:
+                        text: "Conversion"
+                        icon: "language-javascript"
+                        on_press: 
+                            scrmgr.current = "scr_uni"
+
+                Screen_Manager:
+                    id: scrmgr
+                    Standard:
+                    Unit_Converter:
+                    Scientific:
 
 #####################################################################
 
@@ -19,89 +42,97 @@
 
     FloatLayout:
         TextInput:
-            size_hint: [0.95, 0.25]
-            pos_hint: {"x": 0.025, "y": 0.60}
+            size_hint: [0.80, 0.30]
+            pos_hint: {"center_x": 0.575, "center_y": 0.825}
             readonly: True
 
         Ari_Num_Btn:
             text:"[b]7[/b]"
-            pos_hint: {"center_x": 0.125, "center_y": 0.475}
-        
-        Ari_Num_Btn:
-            text:"[b]8[/b]"
-            pos_hint: {"center_x": 0.260, "center_y": 0.475}
-
-        Ari_Num_Btn:
-            text:"[b]9[/b]"
-            pos_hint: {"center_x": 0.395, "center_y": 0.475}
+            pos_hint: {"center_x": 0.245, "center_y": 0.475}
 
         Ari_Num_Btn:
             text:"[b]4[/b]"
-            pos_hint: {"center_x": 0.125, "center_y": 0.340}
-
-        Ari_Num_Btn:
-            text:"[b]5[/b]"
-            pos_hint: {"center_x": 0.260, "center_y": 0.340}
-
-        Ari_Num_Btn:
-            text:"[b]6[/b]"
-            pos_hint: {"center_x": 0.395, "center_y": 0.340}
+            pos_hint: {"center_x": 0.245, "center_y": 0.340}
 
         Ari_Num_Btn:
             text:"[b]1[/b]"
-            pos_hint: {"center_x": 0.125, "center_y": 0.205}
-
-        Ari_Num_Btn:
-            text:"[b]2[/b]"
-            pos_hint: {"center_x": 0.260, "center_y": 0.205}
-
-        Ari_Num_Btn:
-            text:"[b]3[/b]"
-            pos_hint: {"center_x": 0.395, "center_y": 0.205}
+            pos_hint: {"center_x": 0.245, "center_y": 0.205}
 
         Ari_Num_Btn:
             text:"[b][sup]+[/sup]/[sub]-[/sub][/b]"
-            pos_hint: {"center_x": 0.125, "center_y": 0.070}
+            pos_hint: {"center_x": 0.245, "center_y": 0.070}
+        
+        Ari_Num_Btn:
+            text:"[b]8[/b]"
+            pos_hint: {"center_x": 0.380, "center_y": 0.475}
+
+        Ari_Num_Btn:
+            text:"[b]5[/b]"
+            pos_hint: {"center_x": 0.380, "center_y": 0.340}
+
+        Ari_Num_Btn:
+            text:"[b]2[/b]"
+            pos_hint: {"center_x": 0.380, "center_y": 0.205}
 
         Ari_Num_Btn:
             text:"[b]0[/b]"
-            pos_hint: {"center_x": 0.260, "center_y": 0.070}
+            pos_hint: {"center_x": 0.380, "center_y": 0.070}
+
+        Ari_Num_Btn:
+            text:"[b]9[/b]"
+            pos_hint: {"center_x": 0.515, "center_y": 0.475}
+
+        Ari_Num_Btn:
+            text:"[b]6[/b]"
+            pos_hint: {"center_x": 0.515, "center_y": 0.340}
+
+        Ari_Num_Btn:
+            text:"[b]3[/b]"
+            pos_hint: {"center_x": 0.515, "center_y": 0.205}
 
         Ari_Num_Btn:
             text:"[b].[/b]"
-            pos_hint: {"center_x": 0.395, "center_y": 0.070}
+            pos_hint: {"center_x": 0.515, "center_y": 0.070}
 
         Ari_Func_Btn:
             text:"[b]/[/b]"
-            pos_hint: {"center_x": 0.530, "center_y": 0.475}  
+            pos_hint: {"center_x": 0.650, "center_y": 0.475}  
         
         Ari_Func_Btn:
             text:"[b]*[/b]"
-            pos_hint: {"center_x": 0.530, "center_y": 0.340}  
+            pos_hint: {"center_x": 0.650, "center_y": 0.340}  
 
         Ari_Func_Btn:
             text:"[b]+[/b]"
-            pos_hint: {"center_x": 0.530, "center_y": 0.205}  
+            pos_hint: {"center_x": 0.650, "center_y": 0.205}  
 
         Ari_Func_Btn:
             text:"[b]-[/b]"
-            pos_hint: {"center_x": 0.530, "center_y": 0.070}
+            pos_hint: {"center_x": 0.650, "center_y": 0.070}
 
         Ari_Func_Btn:
             text:"[b]bk[/b]"
-            pos_hint: {"center_x": 0.665, "center_y": 0.475}
+            pos_hint: {"center_x": 0.785, "center_y": 0.475}
 
         Ari_Func_Btn:
             text:"[b]C[/b]"
-            pos_hint: {"center_x": 0.665, "center_y": 0.340}
+            pos_hint: {"center_x": 0.785, "center_y": 0.340}
 
         Ari_Func_Btn:
             text:"[b]%[/b]"
-            pos_hint: {"center_x": 0.665, "center_y": 0.205}
+            pos_hint: {"center_x": 0.785, "center_y": 0.205}
 
         Ari_Func_Btn:
             text:"[b]=[/b]"
-            pos_hint: {"center_x": 0.665, "center_y": 0.070}  
+            pos_hint: {"center_x": 0.785, "center_y": 0.070}  
+
+#####################################################################
+
+<Scientific>:
+    name: "scr_sci"
+
+
+
 
 #####################################################################
 
