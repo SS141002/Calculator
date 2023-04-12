@@ -2,129 +2,176 @@
     MDNavigationLayout:
         Screen_Manager:
             MDScreen:
-                MDNavigationRail:
-                    MDNavigationRailItem:
-                        text: "Standard"
-                        icon: "calculator-variant"
-                        on_press: 
-                            scrmgr.current = "scr_std"
+                MDBoxLayout:
+                    orientation: "horizontal"
+                    MDNavigationRail:
+                        MDNavigationRailItem:
+                            text: "Standard"
+                            icon: "calculator-variant"
+                            active: True
+                            on_press: 
+                                scr_mgr.current = "scr_std"
 
-                    MDNavigationRailItem:
-                        text: "Scientific"
-                        icon: "language-javascript"
-                        on_press: 
-                            scrmgr.current = "scr_sci"
+                        MDNavigationRailItem:
+                            text: "Scientific"
+                            icon: "flask"
+                            on_press: 
+                                scr_mgr.current = "scr_sci"
 
-                    MDNavigationRailItem:
-                        text: "Conversion"
-                        icon: "language-javascript"
-                        on_press: 
-                            scrmgr.current = "scr_uni"
+                        MDNavigationRailItem:
+                            text: "Conversion"
+                            icon: "autorenew"
+                            on_press: 
+                                scr_mgr.current = "scr_uni"
 
-                Screen_Manager:
-                    id: scrmgr
-                    Standard:
-                    Unit_Converter:
-                    Scientific:
+                    Screen_Manager:
+                        id: scr_mgr
+                        Standard:
+                        Unit_Converter:
+                        Scientific:
 
 #####################################################################
 
 #Can also use "MDRoundFlatButton"
-<Ari_Num_Btn@MDRectangleFlatButton>:
-    font_size: 30
+<Std_Num_Btn@MDIconButton>:
+    icon_size: 42
 
-<Ari_Func_Btn@MDRaisedButton>:
-    font_size: 30
+<Std_Func_Btn@MDFloatingActionButton>:
+    icon_size: 30
     
 
 <Standard>:
     name: "scr_std"
 
+    std_text: std_text
+
     FloatLayout:
-        TextInput:
-            size_hint: [0.80, 0.30]
-            pos_hint: {"center_x": 0.575, "center_y": 0.825}
+        MDTextField:
+            text: ""
+            id: std_text
+            mode: "rectangle"
+            font_size: 30
+            size_hint: [0.94, 0.30]
+            pos_hint: {"center_x": 0.5, "center_y": 0.825}
             readonly: True
+            on_text:
+                print(self.text)
 
-        Ari_Num_Btn:
-            text:"[b]7[/b]"
-            pos_hint: {"center_x": 0.245, "center_y": 0.475}
+        Std_Num_Btn:
+            icon: "numeric-7"
+            pos_hint: {"center_x": 0.150, "center_y": 0.485}
+            on_press:
+                std_text.text += "7"
 
-        Ari_Num_Btn:
-            text:"[b]4[/b]"
-            pos_hint: {"center_x": 0.245, "center_y": 0.340}
+        Std_Num_Btn:
+            icon: "numeric-4"
+            pos_hint: {"center_x": 0.150, "center_y": 0.350}
+            on_press:
+                std_text.text += "4"
 
-        Ari_Num_Btn:
-            text:"[b]1[/b]"
-            pos_hint: {"center_x": 0.245, "center_y": 0.205}
+        Std_Num_Btn:
+            icon: "numeric-1"
+            pos_hint: {"center_x": 0.150, "center_y": 0.215}
+            on_press:
+                std_text.text += "1"
 
-        Ari_Num_Btn:
-            text:"[b][sup]+[/sup]/[sub]-[/sub][/b]"
-            pos_hint: {"center_x": 0.245, "center_y": 0.070}
+        Std_Func_Btn:
+            icon: "plus-minus-variant"
+            pos_hint: {"center_x": 0.150, "center_y": 0.080}
         
-        Ari_Num_Btn:
-            text:"[b]8[/b]"
-            pos_hint: {"center_x": 0.380, "center_y": 0.475}
+        Std_Num_Btn:
+            icon: "numeric-8"
+            pos_hint: {"center_x": 0.325, "center_y": 0.485}
+            on_press:
+                std_text.text += "8"
 
-        Ari_Num_Btn:
-            text:"[b]5[/b]"
-            pos_hint: {"center_x": 0.380, "center_y": 0.340}
+        Std_Num_Btn:
+            icon: "numeric-5"
+            pos_hint: {"center_x": 0.325, "center_y": 0.350}
+            on_press:
+                std_text.text += "5"
 
-        Ari_Num_Btn:
-            text:"[b]2[/b]"
-            pos_hint: {"center_x": 0.380, "center_y": 0.205}
+        Std_Num_Btn:
+            icon: "numeric-2"
+            pos_hint: {"center_x": 0.325, "center_y": 0.215}
+            on_press:
+                std_text.text += "2"
 
-        Ari_Num_Btn:
-            text:"[b]0[/b]"
-            pos_hint: {"center_x": 0.380, "center_y": 0.070}
+        Std_Num_Btn:
+            icon: "numeric-0"
+            pos_hint: {"center_x": 0.325, "center_y": 0.080}
+            on_press:
+                std_text.text += "0"
 
-        Ari_Num_Btn:
-            text:"[b]9[/b]"
-            pos_hint: {"center_x": 0.515, "center_y": 0.475}
+        Std_Num_Btn:
+            icon: "numeric-9"
+            pos_hint: {"center_x": 0.500, "center_y": 0.485}
+            on_press:
+                std_text.text += "9"
 
-        Ari_Num_Btn:
-            text:"[b]6[/b]"
-            pos_hint: {"center_x": 0.515, "center_y": 0.340}
+        Std_Num_Btn:
+            icon: "numeric-6"
+            pos_hint: {"center_x": 0.500, "center_y": 0.350}
+            on_press:
+                std_text.text += "6"
 
-        Ari_Num_Btn:
-            text:"[b]3[/b]"
-            pos_hint: {"center_x": 0.515, "center_y": 0.205}
+        Std_Num_Btn:
+            icon: "numeric-3"
+            pos_hint: {"center_x": 0.500, "center_y": 0.215}
+            on_press:
+                std_text.text += "3"
 
-        Ari_Num_Btn:
-            text:"[b].[/b]"
-            pos_hint: {"center_x": 0.515, "center_y": 0.070}
+        Std_Num_Btn:
+            icon: "circle-small"
+            pos_hint: {"center_x": 0.500, "center_y": 0.080}
+            on_press:
+                std_text.text += "."
 
-        Ari_Func_Btn:
-            text:"[b]/[/b]"
-            pos_hint: {"center_x": 0.650, "center_y": 0.475}  
+        Std_Func_Btn:
+            icon: "slash-forward"
+            pos_hint: {"center_x": 0.675, "center_y": 0.485}  
+            on_press:
+                std_text.text += "/"
         
-        Ari_Func_Btn:
-            text:"[b]*[/b]"
-            pos_hint: {"center_x": 0.650, "center_y": 0.340}  
+        Std_Func_Btn:
+            icon: "multiplication"
+            pos_hint: {"center_x": 0.675, "center_y": 0.350}
+            on_press:
+                std_text.text += "*"  
 
-        Ari_Func_Btn:
-            text:"[b]+[/b]"
-            pos_hint: {"center_x": 0.650, "center_y": 0.205}  
+        Std_Func_Btn:
+            icon: "plus"
+            pos_hint: {"center_x": 0.675, "center_y": 0.215}  
+            on_press:
+                std_text.text += "+"
 
-        Ari_Func_Btn:
-            text:"[b]-[/b]"
-            pos_hint: {"center_x": 0.650, "center_y": 0.070}
+        Std_Func_Btn:
+            icon: "minus"
+            pos_hint: {"center_x": 0.675, "center_y": 0.080}
+            on_press:
+                std_text.text += "-"
 
-        Ari_Func_Btn:
-            text:"[b]bk[/b]"
-            pos_hint: {"center_x": 0.785, "center_y": 0.475}
+        Std_Func_Btn:
+            icon: "backspace-outline"
+            pos_hint: {"center_x": 0.850, "center_y": 0.485}
+            on_press:
+                std_text.text = std_text.text[:-1] 
 
-        Ari_Func_Btn:
-            text:"[b]C[/b]"
-            pos_hint: {"center_x": 0.785, "center_y": 0.340}
+        Std_Func_Btn:
+            icon: "language-c"
+            pos_hint: {"center_x": 0.850, "center_y": 0.350}
+            on_press:
+                std_text.text = ""
 
-        Ari_Func_Btn:
-            text:"[b]%[/b]"
-            pos_hint: {"center_x": 0.785, "center_y": 0.205}
+        Std_Func_Btn:
+            icon: "percent"
+            pos_hint: {"center_x": 0.850, "center_y": 0.215}
+            on_press:
+                std_text.text += "%"
 
-        Ari_Func_Btn:
-            text:"[b]=[/b]"
-            pos_hint: {"center_x": 0.785, "center_y": 0.070}  
+        Std_Func_Btn:
+            icon: "equal"
+            pos_hint: {"center_x": 0.850, "center_y": 0.080}  
 
 #####################################################################
 
@@ -136,9 +183,71 @@
 
 #####################################################################
 
+<Spinner>:
+    sync_height: True
+    font_size: 20
+    background_color: app.theme_cls.primary_color
+    size_hint: (0.25,0.125)
+    text_autoupdate: True
+
+<Button>:
+    font_size: 20
+    background_color: app.theme_cls.primary_color
+
+
 <Unit_Converter>:
     name: "scr_uni"
 
+    unit_main: unit_main
+    unit_primary: unit_primary
+    unit_secondary: unit_secondary
+
+    FloatLayout:
+        Spinner:
+            id: unit_main
+            # text: "Length"
+            values: ["Length", "Time", "Temprature"]
+            pos_hint: {"center_x":0.5,"center_y":0.91}
+
+        Spinner:
+            id: unit_primary
+            values: ["Length", "Time", "Temprature"]
+            pos_hint: {"center_x":0.15,"center_y":0.7}
+
+        MDTextField:
+            id: text_primary
+            mode: "rectangle"
+            multiline: False
+            font_size: sp(20)
+            write_tab: False
+            input_filter: "float"
+            size_hint_x: 0.66
+            pos_hint: {'center_x': 0.635,'center_y': 0.7}
+
+        MDIconButton:
+            icon: "swap-vertical"
+            icon_color: app.theme_cls.primary_color
+            pos_hint: {'center_x': 0.15,'center_y': 0.525}
+
+        MDIconButton:
+            icon: "swap-vertical"
+            icon_color: app.theme_cls.primary_color
+            pos_hint: {'center_x': 0.635,'center_y': 0.525}
+
+        Spinner:
+            id: unit_secondary
+            values: ["Length", "Time", "Temprature"]
+            pos_hint: {"center_x":0.15,"center_y":0.35}
+
+        MDTextField:
+            id: text_secondary
+            mode: "rectangle"
+            multiline: False
+            # font_size: 
+            write_tab: False
+            readonly: True
+            size_hint: [0.66, 0.12]
+            pos_hint: {'center_x': 0.635,'center_y': 0.35}
             
 
 

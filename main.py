@@ -2,9 +2,7 @@ from kivymd.app import MDApp
 from kivymd.uix.screenmanager import MDScreenManager
 from kivymd.uix.screen import MDScreen
 
-from kivy.lang import Builder
 from kivy.core.window import Window
-from kivy.uix.widget import Widget
 from kivy.properties import ObjectProperty
 
 Window.minimum_width = 550
@@ -13,30 +11,10 @@ Window.size = (550, 500)
 # Window.custom_titlebar = True
 # Window.borderless = True
 
-'''
-class Calc:
-    def __init__(self):
-        self.text = ""
-        self.infix = []
-        self.infix_element = 0
-
-    def insert_into_infix(self, index, number, variable, value):
-        self.infix[index] = [number, variable, value]
-
-    def text_to_infix(self):
-        num = 0
-        for i in self.text:
-            if i.isdigit():
-                num += (num * 10) + int(i)
-            else:
-                self.insert_into_infix(self.infix_element, num, '#', '#')
-                num = 0
-
-'''
-
 
 class Standard(MDScreen):
-    pass
+    std_text = ObjectProperty(None)
+    
 
 
 class Scientific(MDScreen):
@@ -44,7 +22,9 @@ class Scientific(MDScreen):
 
 
 class Unit_Converter(MDScreen):
-    pass
+    unit_main = ObjectProperty(None)
+    unit_primary = ObjectProperty(None)
+    unit_secondary = ObjectProperty(None)
 
 
 class Screen_Manager(MDScreenManager):
@@ -55,15 +35,14 @@ class Background(MDScreen):
     pass
 
 
-file = Builder.load_file("design.kv")
-
-
 class MyApp(MDApp):
     def build(self):
+        self.load_kv("design.kv")
         self.theme_cls.theme_style = "Dark"
-        self.theme_cls.primary_palette = "Orange"
+        self.theme_cls.primary_palette = "DeepPurple"
+        self.theme_cls.material_style = "M3"
         self.title = "Calculator"
-        # self.icon = "Icons\calculator.png"
+        self.icon = "Icons\calculator.png"
         return Background()
 
 
