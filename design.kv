@@ -44,18 +44,39 @@
     name: "scr_std"
 
     std_text: std_text
+    std_ans: std_ans
 
     FloatLayout:
         MDTextField:
-            text: ""
             id: std_text
-            mode: "rectangle"
-            font_size: 30
-            size_hint: [0.94, 0.30]
-            pos_hint: {"center_x": 0.5, "center_y": 0.825}
+            text: ""
+            mode: "fill"
+            font_size: 42
+            size_hint: [0.94, 0.22]
+            pos_hint: {"center_x": 0.5, "center_y": 0.85}
+            halign: "right"
             readonly: True
+            multiline: False
+            active_line: False
+            radius: [10, 10, 10, 10]
+            fill_color_normal: app.theme_cls.bg_light
             on_text:
-                print(self.text)
+                root.fast_ans()
+            
+        MDTextField:
+            id: std_ans
+            text: ""
+            mode: "fill"
+            font_size: 24
+            size_hint_x: 0.94
+            pos_hint: {"center_x": 0.5, "center_y": 0.64}
+            halign: "right"
+            readonly: True
+            multiline: False
+            cursor_blink: False
+            active_line: False
+            radius: [10, 10, 10, 10]
+            fill_color_normal: app.theme_cls.bg_light
 
         Std_Num_Btn:
             icon: "numeric-7"
@@ -162,6 +183,7 @@
             pos_hint: {"center_x": 0.850, "center_y": 0.350}
             on_press:
                 std_text.text = ""
+                std_ans.text = ""
 
         Std_Func_Btn:
             icon: "percent"
@@ -172,6 +194,8 @@
         Std_Func_Btn:
             icon: "equal"
             pos_hint: {"center_x": 0.850, "center_y": 0.080}  
+            on_press:
+                std_text.text = std_ans.text
 
 #####################################################################
 

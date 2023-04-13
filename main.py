@@ -14,7 +14,17 @@ Window.size = (550, 500)
 
 class Standard(MDScreen):
     std_text = ObjectProperty(None)
-    
+    std_ans = ObjectProperty(None)
+
+    def fast_ans(self):
+        string = self.std_text.text
+        try:
+            ans = eval(string)
+        except:
+            pass
+        else:
+           self.std_ans.text = str(ans)
+
 
 
 class Scientific(MDScreen):
